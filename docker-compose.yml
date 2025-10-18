@@ -1,0 +1,16 @@
+services:
+  backend:
+    build: ./networking-backend
+    restart: always
+    container_name: backend
+    ports:
+    - "3000:5000"
+
+  frontend:
+    build: ./networking-frontend
+    container_name: frontend
+    restart: always
+    ports :
+     - "5173:5173"
+    depends_on:
+      - backend 
