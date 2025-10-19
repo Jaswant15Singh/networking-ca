@@ -4,16 +4,16 @@ services:
     restart: always
     container_name: backend
     ports:
-    - "5000:5000"
+      - "5000:5000"
 
   frontend:
-    build: 
-      context : ./networking-frontend
+    build:
+      context: ./networking-frontend
       args:
-        VITE_API_URL:http://18.216.242.59:5000/
+        VITE_API_URL: "http://18.216.242.59:5000/"
     container_name: frontend
     restart: always
-    ports :
-     - "5173:5173"
+    ports:
+      - "5173:5173"
     depends_on:
-      - backend 
+      - backend
