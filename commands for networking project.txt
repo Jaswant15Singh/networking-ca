@@ -1,0 +1,22 @@
+commands for networking project
+
+docker build -tagname .
+
+docker run -d -p hostPort:senderPort --name yourname imagename
+
+-- for docker compose
+docker-compose up
+docker compose build
+docker compose up --build
+docker compose down
+
+
+
+--for ec2 Linux
+ssh -i "C:\Users\singh\.ssh\keypair.pem" ec2-user@18.216.242.59
+
+then 
+git pull
+docker compose up
+docker compose build
+docker compose down 
