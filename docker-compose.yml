@@ -7,7 +7,10 @@ services:
     - "5000:5000"
 
   frontend:
-    build: ./networking-frontend
+    build: 
+      context : ./networking-frontend
+      args:
+        VITE_API_URL=http://18.216.242.59:5000/
     container_name: frontend
     restart: always
     ports :
