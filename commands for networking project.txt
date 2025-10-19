@@ -17,6 +17,6 @@ ssh -i "C:\Users\singh\.ssh\keypair.pem" ec2-user@18.216.242.59
 
 then 
 git pull
-docker compose up
 docker compose build
+docker compose up
 docker compose down 
