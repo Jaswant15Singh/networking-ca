@@ -7,7 +7,7 @@
 # EXPOSE 5000
 # CMD ["nodemon","index.js"]
 
-FROM node:22
+FROM node:20
 
 WORKDIR /app
 
