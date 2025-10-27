@@ -147,10 +147,9 @@ jobs:
 
         uses: dawidd6/action-ansible-playbook@v2
         with:
-          playbook: install_docker.yml
-          inventory: hosts.ini
+          playbook: ansible/install_docker.yml
+          inventory: ansible/hosts.ini
           key: ${{ secrets.EC2_KEY }}
-        working-directory: ansible # root of repo
 
       # ===========================
       # Deployment Step
