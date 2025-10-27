@@ -1,0 +1,44 @@
+---
+- name: Install and configure Docker on Amazon Linux 2025
+  hosts: all
+  become: yes
+  tasks:
+    - name: Update system packages
+      command: sudo dnf update -y
+
+    - name: Install Docker
+      command: sudo dnf install -y docker
+
+    - name: Add ec2-user to docker group
+      user:
+        name: ec2-user
+        groups: docker
+        append: yes
+
+    - name: Enable Docker service
+      systemd:
+        name: docker
+        enabled: yes
+
+    - name: Start Docker service
+      systemd:
+        name: docker
+        state: started
+
+    - name: Verify Docker installation
+      command: docker --version
+      register: docker_version
+      ignore_errors: yes
+
+    - name: Display Docker version
+      debug:
+        msg: "{{ docker_version.stdout if docker_version.stdout else 'Docker not found in current session' }}"
+
+    - name: Post-install instructions
+      debug:
+        msg: |
+          Docker installation complete on Amazon Linux 2025!
+          IMPORTANT: Log out and log back in (or run 'newgrp docker')
+          so that 'ec2-user' can run docker without sudo.
+          After re-login, test with:
+          docker run hello-world
