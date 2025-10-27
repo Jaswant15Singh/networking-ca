@@ -144,10 +144,11 @@ jobs:
       # Ansible Step: Install Docker + Git
       # ===========================
       - name: Run Ansible playbook
+        working-directory: ${{ github.workspace }} # root of repo
         uses: dawidd6/action-ansible-playbook@v2
         with:
-          playbook: ../../ansible/install_docker.yml
-          inventory: ../../ansible/hosts.ini
+          playbook: ansible/install_docker.yml
+          inventory: ansible/hosts.ini
           key: ${{ secrets.EC2_KEY }}
 
       # ===========================
