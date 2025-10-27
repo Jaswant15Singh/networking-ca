@@ -19,7 +19,7 @@ function App() {
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>Count is {count}</button>
         <p>
-          Edited data by Jaswant<code>src/App.jsx</code> and save to test HMR
+          Edited data by Jaswant Singh<code>src/App.jsx</code> and save to test HMR
         </p>
       </div>
       <p className="read-the-docs">Click on the Vite and React logos to learn more</p>
