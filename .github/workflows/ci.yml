@@ -144,6 +144,7 @@ jobs:
       # Ansible Step: Install Docker + Git
       # ===========================
       - name: Run Ansible playbook
+        working-directory: ansible # root of repo
         uses: dawidd6/action-ansible-playbook@v2
         with:
           playbook: ansible/install_docker.yml
