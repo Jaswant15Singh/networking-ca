@@ -140,20 +140,14 @@ jobs:
 #         env:
 #           EC2_KEY: ${{ secrets.EC2_KEY }}
 
-#       # ===========================
-#       # Ansible Step: Install Docker + Git
-#       # ===========================
 #       - name: Run Ansible playbook
 
 #         uses: dawidd6/action-ansible-playbook@v2
 #         with:
-#           playbook: ./ansible/install_docker.yml
+#           playbook: ansible/install_docker.yml
 #           inventory: ansible/hosts.ini
 #           key: ${{ secrets.EC2_KEY }}
 
-#       # ===========================
-#       # Deployment Step
-#       # ===========================
 #       - name: Deploy on EC2
 #         env:
 #           EC2_HOST: ${{ secrets.EC2_HOST }}
