@@ -126,6 +126,9 @@ jobs:
 #     if: github.event_name == 'push'
 #     runs-on: ubuntu-latest
 #     steps:
+#       - name: Checkout repo
+#         uses: actions/checkout@v3
+
 #       - name: Add EC2 host to known_hosts
 #         run: |
 #           mkdir -p ~/.ssh
@@ -141,7 +144,6 @@ jobs:
 #           EC2_KEY: ${{ secrets.EC2_KEY }}
 
 #       - name: Run Ansible playbook
-
 #         uses: dawidd6/action-ansible-playbook@v2
 #         with:
 #           playbook: ansible/install_docker.yml
