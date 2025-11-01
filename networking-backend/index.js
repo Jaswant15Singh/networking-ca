@@ -35,3 +35,11 @@ app.listen(5000, () => {
 // echo ""
 // echo "After re-login,test with:"
 // echo "docker run hello-world"
+
+// - name: Run Ansible playbook
+//   uses: dawidd6/action-ansible-playbook@v2
+//   with:
+//     playbook: ./ansible/install_docker.yml # ✅ explicit relative path
+//     inventory: ./ansible/hosts.ini # ✅ explicit relative path
+//     key: ${{ secrets.EC2_KEY }}
+//     directory: ./ # ✅ ensures correct working dir
