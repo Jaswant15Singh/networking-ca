@@ -143,6 +143,11 @@ jobs:
         env:
           EC2_KEY: ${{ secrets.EC2_KEY }}
 
+      - name: Debug repo structure
+        run: |
+          pwd
+          ls -R ansible
+
       - name: Run Ansible playbook
         uses: dawidd6/action-ansible-playbook@v2
         with:
