@@ -143,6 +143,11 @@ jobs:
         env:
           EC2_KEY: ${{ secrets.EC2_KEY }}
 
+      - name: Debug repo structure
+        run: |
+          pwd
+          ls -R ansible
+
       - name: Run Ansible playbook
         run: /opt/pipx_bin/ansible-playbook -i ansible/hosts.ini ansible/install_docker.yml --key-file ec2_key.pem
 
