@@ -1,3 +1,4 @@
+---
 - name: Install and configure Docker + Docker Compose on Amazon Linux
   hosts: all
   become: yes
