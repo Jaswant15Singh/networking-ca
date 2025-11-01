@@ -149,12 +149,7 @@ jobs:
           ls -R ansible
 
       - name: Run Ansible playbook
-        uses: dawidd6/action-ansible-playbook@v2
-        with:
-          playbook: ./ansible/install_docker.yml # ✅ explicit relative path
-          inventory: ./ansible/hosts.ini # ✅ explicit relative path
-          key: ${{ secrets.EC2_KEY }}
-          directory: ./ # ✅ ensures correct working dir
+        run: /opt/pipx_bin/ansible-playbook -i ansible/hosts.ini ansible/install_docker.yml --key-file ec2_key.pem
 
       - name: Deploy on EC2
         env:
