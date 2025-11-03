@@ -17,9 +17,7 @@ function App() {
       </div>
       <h1>Vite + React by </h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          Ansible Count Data is {count}
-        </button>
+        <button onClick={() => setCount((count) => count + 1)}>Data is {count}</button>
         <p>
           Edited data by Jaswant Singh<code>src/App.jsx</code> and save to test HMR
         </p>
